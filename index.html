@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Generator by IHSAN</title>
+</head>
+<body>
+
+<h1>Welcome to Key Generator by IHSAN</h1>
+
+<script>
+// Generate a secure code with length 144
+function generateSecureCode() {
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var secureCode = '';
+    for (var i = 0; i < 144; i++) {
+        secureCode += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return secureCode;
+}
+
+// Function to generate and display the secure code
+function generateKey() {
+    var secureCode = generateSecureCode();
+    var resultElement = document.getElementById('result');
+    resultElement.textContent = 'Secure Code: ' + secureCode;
+}
+
+</script>
+
+<button onclick="generateKey()">Generate Key</button>
+<p id="result"></p>
+
+</body>
+</html>
